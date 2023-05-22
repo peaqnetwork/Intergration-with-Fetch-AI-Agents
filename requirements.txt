@@ -1,0 +1,3 @@
+substrate_interface==1.6.0
+substrateinterface==1.0.0
+uagents==0.3.1
