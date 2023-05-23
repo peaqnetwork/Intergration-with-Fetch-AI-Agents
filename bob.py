@@ -161,7 +161,8 @@ async def check_balance(ctx: Context):
             ctx.logger.info(f"Address mapping not found for {aliceAddress}")
             return
         agentAddress = mappedAddress.split(':')[0]
-        fetchAgentBalance = ctx.ledger.query_bank_balance(agentAddress)
+        walletAddress = mappedAddress.split(':')[1]
+        fetchAgentBalance = ctx.ledger.query_bank_balance(walletAddress)
         ctx.logger.info(f"agent's balance: {fetchAgentBalance}")
         await ctx.send(agentAddress, Transfer(amount=(minimum_balance - balance)))
         
