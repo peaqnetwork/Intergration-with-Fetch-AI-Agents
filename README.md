@@ -1,4 +1,4 @@
-# Intergration-with-Fecth-AI-Agents
+# Intergration-with-Fetch-AI-Agents
 
 This project demonstrates the integration of Fetch.ai agents and the Peaq network on the Cosmos blockchain for balance maintenance between two cross-chain machine identities, Bob and Alice. The objective is to ensure that both identities always maintain a minimum balance of 5 tokens in their Peaq accounts.
 
