@@ -28,10 +28,31 @@ keypair = Keypair.create_from_mnemonic(seed)
 
 # Connect to a Substrate-based blockchain
 substrate = SubstrateInterface(
-    url="wss://wsspc1-qa.agung.peaq.network",
+    url="wss://polkadot-rpc.dwellir.com",
     # ss58_format=42,  # Replace with the SS58 format of your chain
     # type_registry_preset="substrate-node-template",
 )
+
+# Get the chain name
+chain_name = substrate.rpc_request(method='system_chain', params=[])
+print("Chain Name:", chain_name)
+
+# Get list of all modules
+metadata = substrate.get_metadata_call_function('XcmPallet', 'reserve_transfer_assets')
+
+print("Modules:", metadata)
+
+
+# extrinsics = substrate.get_runtime_block().extrinsics
+
+#     # Iterate through the extrinsics and print their details
+# for extrinsic in extrinsics:
+#     print(f"Extrinsic Hash: {extrinsic.extrinsic.hash}")
+#     print(f"Extrinsic Method: {extrinsic.extrinsic.method}")
+#     print(f"Extrinsic Signer: {extrinsic.extrinsic.signer}")
+#     print(f"Extrinsic Args: {extrinsic.extrinsic.args}")
+
+exit()
 
 minimum_balance = 5 * 10 ** substrate.token_decimals
 
